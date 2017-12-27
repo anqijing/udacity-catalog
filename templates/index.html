@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content%}   
+
+<div class='container-fluid main-content'>
+    <div class='col-lg-3'>
+        <div class='catalog-list'>
+            <ul>
+                {% for category in categories %}
+                <a href="{{url_for('showcategory', catalog_name = category.name )}}">
+                    <li >
+                        <span><h4>{{category.name}}</h4></span>
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class='col-lg-9'>
+        <div class='catalog-img'>
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{url_for('showcategory', catalog_name = 'Action movie' )}}">
+                        <img class="img-responsive" src="{{url_for('static',filename='images/action.jpeg')}}" alt="Action Movie">
+                    </a>
+                    <h3>
+                        <a href="{{url_for('showcategory', catalog_name = 'Action movie' )}}">Action movie</a>
+                    </h3>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{url_for('showcategory', catalog_name = 'Adventure movie' )}}">
+                        <img class="img-responsive" src="{{url_for('static',filename='images/adventure.jpeg')}}" alt="Adventure Movie">
+                    </a>
+                    <h3>
+                        <a href="{{url_for('showcategory', catalog_name = 'Adventure movie' )}}">Adventure movie</a>
+                    </h3>
+                </div>
+            </div>
+            <!-- /.row -->
+
+            <!-- Projects Row -->
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="{{url_for('showcategory', catalog_name = 'War movie' )}}">
+                        <img class="img-responsive" src="{{url_for('static',filename='images/war.jpg')}}" alt="War Movie">
+                    </a>
+                    <h3>
+                        <a href="{{url_for('showcategory', catalog_name = 'War movie' )}}">War movie</a>
+                    </h3>
+                </div>
+                <div class="col-md-6">
+                    <a href="{{url_for('showcategory', catalog_name = 'Comedy movie' )}}">
+                     <img class="img-responsive" src="{{url_for('static',filename='images/comedy.png')}}" alt="Comedy Movie">
+                 </a>
+                 <h3>
+                    <a href="{{url_for('showcategory', catalog_name = 'Comedy movie' )}}">Comedy movie</a>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{url_for('showcategory', catalog_name = 'Musical movie' )}}">
+                <img class="img-responsive" src="{{url_for('static',filename='images/musical.jpeg')}}" alt="Musical Movie">
+            </a>
+            <h3>
+                <a href="{{url_for('showcategory', catalog_name = 'Musical movie' )}}">Musical movie</a>
+            </h3>
+        </div>
+        <div class="col-md-6">
+            <a href="{{url_for('showcategory', catalog_name = 'Science movie' )}}">
+                <img class="img-responsive" src="{{url_for('static',filename='images/science.jpeg')}}" alt="Science Movie">
+            </a>
+            <h3>
+                <a href="{{url_for('showcategory', catalog_name = 'Science movie' )}}">Science movie</a>
+            </h3>
+        </div>
+    </div>
+</div>            
+</div>
+</div>            
+</div>
+</div>
+{% endblock %}

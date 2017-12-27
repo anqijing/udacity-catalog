@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content%}   
+<div class='container-fluid main-content'>
+	<h2>{{movieitem.name}}</h2>
+	<h4>Director:{{movieitem.director}}</h4>
+	<p>Introduction: <br>{{movieitem.description}}</p>
+	{% if 'username' in session and user.id == session['user_id'] %}
+	<div class='row' id='edititem'>
+		<a href="{{url_for('editCategoryItem', user = user, catalog_name = category.name, catalog_item = movieitem.name)}}">Edit</a>
+		<span> | </span>
+		<a href="{{url_for('deleteCategoryItem', catalog_name = category.name, catalog_item = movieitem.name)}}">Delete</a>
+	</div>
+	{% endif %}
+
+</div>
+{% endblock %}

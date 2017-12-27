@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content%}   
+<div class='container-fluid main-content'>
+    <div class='col-lg-3'>
+        <div class='catalog-list'>
+            <ul><h3>Categories</h3>
+                {% for category in categories %}
+                <a href="{{url_for('showcategory', catalog_name = category.name )}}">
+                    <li >
+                        <span><h4>{{category.name}}</h4></span>
+                    </li>
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <div class='col-lg-9'>
+      <div class='container'>
+          <ul>
+              <h3>{{categoryname}} items</h3>
+              {% for item in movieitems %}
+              <a href="{{url_for('showitem', catalog_name=categoryname, catalog_item=item.name)}}">
+                  <li>
+                      <span><h4>{{ item.name }}</h4></span>
+                  </li>
+              </a>
+              {% endfor %}
+          </ul>
+      </div> 
+      <div class='container' id='additem'>
+          <a href="{{url_for('addCategoryItem', catalog_name=categoryname)}}"><span><h4>Add item</h4></span></a>
+      </div> 
+  </div>
+</div>
+{% endblock %}

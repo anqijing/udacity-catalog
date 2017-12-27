@@ -1,0 +1,19 @@
+.main-content {
+	margin: 120px 50px 50px 50px;
+	padding: 50px;
+	background-color: rgb(232, 239, 249)
+}
+
+#additem {
+	padding-left: 50%;
+	padding-top: 50px;
+}
+
+#edititem {
+	padding-left: 70%;
+	padding-top: 70px;
+}
+
+.catalog-img img{
+	height: 250px;
+}
